@@ -13,3 +13,9 @@ JavaScriptで作成したシンプルなTODOアプリです。
 - HTML
 - CSS
 - JavaScript（バニラ）
+- 
+## 使い方
+1. リポジトリをクローン
+2. `index.html`をブラウザで開く
+3. テキストボックスにTODOを入力
+4. 「追加」ボタンをクリックしてTODOを追加
