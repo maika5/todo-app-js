@@ -1,3 +1,4 @@
+/* 全体のスタイル */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,58 +6,66 @@
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 30px;
+    background-color: #fff5f5;  /* 薄いピンクの背景 */
+    color: #4a4a4a;
 }
 
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 30px auto;
-}
-
+/* 入力エリアのスタイル */
 .input-area {
-    background-color: #FDF5E6;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
+    text-align: center;  /* 中央寄せ */
 }
 
-#todo-input {
-    width: 70%;
-    padding: 8px;
+input {
+    padding: 10px 15px;
     margin-right: 10px;
-    border: none;
-    /* border: 1px solid #696969; */
-    border-radius: 4px;
+    border: 2px solid #ffd1dc;  /* パステルピンクの枠線 */
+    border-radius: 20px;  /* 丸みを増やす */
+    width: 300px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ffb6c1;  /* フォーカス時の枠線色 */
+    box-shadow: 0 0 5px rgba(255, 182, 193, 0.3);
 }
 
 button {
-    padding: 8px 16px;
-    margin: 0px 2px;
-    background-color: #FFA500;
-    color: #333;
-    border: 1px solid #696969;
-    border-radius: 4px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffb6c1;  /* パステルピンク */
+    color: white;
     cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #FAF0E6;
+    background-color: #ff99a3;
+    transform: translateY(-2px);
 }
 
+/* TODOエリアの共通スタイル */
 .incomplete-area, .complete-area {
-    background-color: #FDF5E6;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    min-height: 200px;
 }
 
 h2 {
     margin-bottom: 15px;
-    color: #333;
+    font-size: 1.2em;
+    color: #ff8da1;  /* ピンク系の見出し */
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 ul {
@@ -66,15 +75,48 @@ ul {
 li {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-li:last-child {
-    border-bottom: none;
+li:hover {
+    transform: translateX(5px);
 }
 
-.todo-text {
+li span {
+    margin-right: 15px;
     flex-grow: 1;
-    margin: 0 15px;
+}
+
+/* 完了・削除ボタンのスタイル */
+li button {
+    margin-left: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* 完了ボタン */
+li button:nth-child(2) {
+    background-color: #98d8c9;  /* ミント系の色 */
+}
+
+li button:nth-child(2):hover {
+    background-color: #7ac9b7;
+}
+
+/* 削除ボタン */
+li button:nth-child(3) {
+    background-color: #ffb6c1;
+}
+
+/* 戻すボタン（完了エリアのボタン） */
+.complete-area li button {
+    background-color: #b8a9c9;  /* ラベンダー系の色 */
+}
+
+.complete-area li button:hover {
+    background-color: #a594b8;
 }

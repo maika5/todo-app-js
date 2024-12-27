@@ -1,8 +1,12 @@
-// DOM要素の取得
+// DOM要素の取得　　
+//constで変数を宣言
+//getElementByIdメソッド：　HTMLタグで指定したIDに対応する　要素を取得　
+//document(HTML)からgetElementById('todo-input');todo-inputというIDを持つ要素を取得して、todoInputに格納
 const todoInput = document.getElementById('todo-input');
 const addButton = document.getElementById('add-button');
 const incompleteList = document.getElementById('incomplete-list');
 const completeList = document.getElementById('complete-list');
+
 
 // TODOを追加する関数
 const addTodo = () => {
